@@ -97,26 +97,26 @@
 */
 {% macro hmtc(id, txt, gad_actual, gad_set, gad_controlmode, gad_daytemp, gad_nighttemp, gad_window, gad_battery, gad_state, gad_txt, step, gad_valve, gad_humidity, show_auto_man, min_temp, max_temp) %}
 	{% import "basic.html" as basic %}
-	{% import "basic_extra/basic_extra.html" as basic_extra %}
+	{% import "widgets/basic_extra.html" as basic_extra %}
 	{% import "icon.html" as icon %}
-	
+
     {% if once('homematic.hmtc') %}
     <link rel="stylesheet" href="{{user_directory}}/homematic/widget_homematic.css" type="text/css">
 	{% endif %}
-	
+
 	<div id="{{ uid(page, id) }}" data-widget="device.hmtc" data-step="{{ step|default(0.5) }}"
 		class="rtr_homematic" min_temp="{{ min_temp | default(5.0) }}" max_temp="{{ max_temp | default(30.0) }}">
 		<div class="actual">
 			<div class="temp">
-			{{ basic.symbol(id~'windowopen', gad_window, '', icon1~'fts_window_2w_open.png', 'open') }} 
+			{{ basic.symbol(id~'windowopen', gad_window, '', icon1~'fts_window_2w_open.png', 'open') }}
 			{{ basic.symbol(id~'windowclose', gad_window, '', icon0~'fts_window_2w.png', 'closed') }}
 			&nbsp;{{ basic.float(id~'actual', gad_actual, '°' ) }}
 			{{ icon.battery(id~'battery', '', gad_battery, '2.2', '3') }}
 			</div>
-			
+
 			{% if gad_humidity %}<div style="font-size:0.8em">Luftfeuchte:&nbsp;{{ basic.value(id~'humidity', gad_humidity) }}%</div>{% endif %}
 			{% if gad_valve %}<div style="font-size:0.8em">Ventil:&nbsp;{{ basic.value(id~'valve', gad_valve) }}%</div>{% endif %}
-			
+
 			<div class="text">
 			{{ txt }} {{ basic.value(id~'controlmode', gad_controlmode) }} {% if gad_txt %} {{ basic.value(id~'txt', gad_txt) }} {% endif %}
 			</div>
@@ -139,7 +139,7 @@
 					{{ basic.switch(id~'day', gad_set, icon1~'scene_day.png', icon0~'scene_day.png', '21', '17') }}
 					{{ basic.switch(id~'winter', gad_set, icon1user~'snow_shield.png', icon0user~'snow_shield.png', 'on', '21') }}
 					{{ basic.switch(id~'summer', gad_set, icon1user~'heat_pause.png', icon0user~'heat_pause.png', 'off', '17') }}
-					{% if gad_state %}{{ basic.switch(id~'state', gad_state, icon1~'sani_heating.png', icon0~'sani_heating.png') }}{% endif %}		
+					{% if gad_state %}{{ basic.switch(id~'state', gad_state, icon1~'sani_heating.png', icon0~'sani_heating.png') }}{% endif %}
 		</div>
 	</div>
 {% endmacro %}
@@ -162,11 +162,11 @@
 	{% import "basic.html" as basic %}
 	{% import "basic2.html" as basic2 %}
 	<div id="{{ uid(page, id) }}" style="font-size:0.8em">
-		<table width="100%"  style="text-align:left">		
+		<table width="100%"  style="text-align:left">
 		<tr><td width="80px">Programm:</td>
 			<td style="float:left width:50%">{% if gad_prog %}{{ basic2.selectmenu(id~'prog', gad_prog, '', 'prog1', 'prog2', 'prog3') }}{% endif %}</td>
 			<td style="width:50% float:right">
-			<span data-role="controlgroup" data-type="horizontal" style="float:right;"> 
+			<span data-role="controlgroup" data-type="horizontal" style="float:right;">
 				{% if gad_init %}{{ basic.button(id~'init', gad_init, ' init ', '' ) }}{% endif %}
 				{% if gad_save %}{{ basic.button(id~'save', gad_save, ' save ', '') }}{% endif %}
 				{% if gad_restore %}{{ basic.button(id~'restore', gad_restore, 'restore', '') }}{% endif %}
@@ -174,7 +174,7 @@
 		</td></tr></table>
 		{% if gad_prog %}{{ basic2.pager('pager123', gad_prog, 'prog1') }}{% endif %}
 		<div id="timerpages" style="position:relative">
-			<div id="prog1" style="visibility:visible; position:absolute; top:0; width:100%">	
+			<div id="prog1" style="visibility:visible; position:absolute; top:0; width:100%">
 				{{ basic2.textinput(id~'p1_mon', gad_p1_mon, 'Montag:') }}
 				{{ basic2.textinput(id~'p1_tue', gad_p1_tue, 'Dienstag:') }}
 				{{ basic2.textinput(id~'p1_wed', gad_p1_wed, 'Mittwoch:') }}
@@ -182,7 +182,7 @@
 				{{ basic2.textinput(id~'p1_fri', gad_p1_fri, 'Freitag:') }}
 				{{ basic2.textinput(id~'p1_sat', gad_p1_sat, 'Samstag:') }}
 				{{ basic2.textinput(id~'p1_sun', gad_p1_sun, 'Sonntag:') }}
-			</div>	
+			</div>
 			<div id="prog2" style="visibility:hidden; position:absolute; top:0; width:100%">
 				{{ basic2.textinput(id~'p2_mon', gad_p2_mon, 'Montag:') }}
 				{{ basic2.textinput(id~'p2_tue', gad_p2_tue, 'Dienstag:') }}
@@ -191,8 +191,8 @@
 				{{ basic2.textinput(id~'p2_fri', gad_p2_fri, 'Freitag:') }}
 				{{ basic2.textinput(id~'p2_sat', gad_p2_sat, 'Samstag:') }}
 				{{ basic2.textinput(id~'p2_sun', gad_p2_sun, 'Sonntag:') }}
-			</div>	
-			<div id="prog3" style="visibility:hidden; position:absolute; top:0; width:100%">	
+			</div>
+			<div id="prog3" style="visibility:hidden; position:absolute; top:0; width:100%">
 				{{ basic2.textinput(id~'p3_mon', gad_p3_mon, 'Montag:') }}
 				{{ basic2.textinput(id~'p3_tue', gad_p3_tue, 'Dienstag:') }}
 				{{ basic2.textinput(id~'p3_wed', gad_p3_wed, 'Mittwoch:') }}
@@ -200,7 +200,7 @@
 				{{ basic2.textinput(id~'p3_fri', gad_p3_fri, 'Freitag:') }}
 				{{ basic2.textinput(id~'p3_sat', gad_p3_sat, 'Samstag:') }}
 				{{ basic2.textinput(id~'p3_sun', gad_p3_sun, 'Sonntag:') }}
-			</div>	
+			</div>
 		</div>
 	</div>
 {% endmacro %}
@@ -275,7 +275,7 @@
     {% if once('homematic.slider') %}
     <link rel="stylesheet" href="{{user_directory}}/homematic/widget_homematic.css" type="text/css">
 	{% endif %}
-	
+
 	<input id="{{ uid(page, id) }}" data-widget="homematic.slider" data-item="{{ gad }}"
 		type="range" value="0" min="{{ min|default(0) }}" max="{{ max|default(255) }}" step="{{ step|default(5) }}"
 		orientation="{{ mode }}" data-highlight="true" />
