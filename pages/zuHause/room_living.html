@@ -1,7 +1,9 @@
 /** * ----------------------------------------------------------------------------- * @package smartVISU * @author Martin Gleiß * @copyright 2012 - 2015 * @license GPL [http://www.gnu.de] * -----------------------------------------------------------------------------
-*/ {% extends "rooms.html" %} {% block content %}
+*/ {% extends "rooms.html" %}
 
-<h1><img class="icon" src='{{ icon0 }}scene_sleeping.png'/>Schlafzimmer</h1>
+{% block content %}
+
+<h1><img class="icon" src='{{ icon0 }}scene_living.png'/>Wohnzimmer</h1>
 <div class="preblock">
 </div>
 <div class="block">
@@ -12,6 +14,21 @@
 				<tr>
 					<td align="left" width="100px">
 						{{ basic.switch('Leselampe', 'Leselampe.sw', icon1~'light_floor_lamp.png', icon0~'light_floor_lamp.png') }}
+					</td>
+					<td>Leselampe</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="block">
+	<div class="set-2" data-role="collapsible-set" data-theme="c" data-content-theme="a" data-mini="true">
+		<div data-role="collapsible" data-collapsed="false">
+			<h3>Licht</h3>
+			<table width="90%">
+				<tr>
+					<td align="left" width="100px">
+						{{ homematic.hmtc('WZ.Heizung', 'Wohnzimmer ', 'WZ.Temp.sw', 'WZ.set', 'WZ.controlmode', '', '', 'WZ.Fenster', 'WZ.TS.V.sw', 'WZ.lock', '', '', 'WZ.vp.sw','WZ.hud.sw') }}
 					</td>
 					<td>Leselampe</td>
 				</tr>
