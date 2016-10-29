@@ -3,10 +3,10 @@
 
 {% block content %}
 
-<h1><img class="icon" src='{{ icon0 }}scene_living.png'/>Wohnzimmer</h1>
+<h1><img class="icon" src='{{ icon0 }}scene_living.svg'/>Wohnzimmer</h1>
 <div class="preblock">
 </div>
-<div class="block">
+<!-- <div class="block">
 	<div class="set-2" data-role="collapsible-set" data-theme="c" data-content-theme="a" data-mini="true">
 		<div data-role="collapsible" data-collapsed="false">
 			<h3>Licht</h3>
@@ -20,11 +20,11 @@
 			</table>
 		</div>
 	</div>
-</div>
-<div class="block">
+</div> -->
+<!-- <div class="block">
 	<div class="set-2" data-role="collapsible-set" data-theme="c" data-content-theme="a" data-mini="true">
 		<div data-role="collapsible" data-collapsed="false">
-			<h3>Licht</h3>
+			<h3>Heizung</h3>
 			<table width="90%">
 				<tr>
 					<td align="left" width="100px">
@@ -34,6 +34,12 @@
 				</tr>
 			</table>
 		</div>
+	</div>
+</div> -->
+<div class="block">
+	<div class="ui­bar­c ui­li­divider ui­corner­top">Wohnzimmer</div>
+	<div class="ui­fixed ui­body­a ui­corner­bottom ">
+		{{ homematic.hmtc('WZ.Heizung', 'Wohnzimmer ', 'WZ.Temp.sw', 'WZ.set', 'WZ.controlmode', '', '', 'WZ.Fenster', 'WZ.TS.V.sw', 'WZ.lock', '', '', 'WZ.vp.sw','WZ.hud.sw') }}
 	</div>
 </div>
 
