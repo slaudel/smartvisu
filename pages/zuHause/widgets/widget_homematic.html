@@ -95,7 +95,7 @@
 * @param step for plus/minus buttons (optional, default 0.5)
 * @param show_auto_man flag to show/hide control for auto / manual
 */
-{% macro hmtc(id, txt, gad_actual, gad_set, gad_controlmode, gad_daytemp, gad_nighttemp, gad_window, gad_battery, gad_state, gad_txt, step, gad_valve, gad_humidity, show_auto_man, min_temp, max_temp) %}
+{% macro hmtc(id, txt, gad_actual, gad_set, gad_controlmode, gad_daytemp, gad_nighttemp, gad_window, gad_battery, gad_globallock, gad_txt, step, gad_valve, gad_humidity, show_auto_man, min_temp, max_temp) %}
 	{% import "basic.html" as basic %}
 	{% import "widgets/basic_extra.html" as basic_extra %}
 	{% import "icon.html" as icon %}
@@ -139,7 +139,9 @@
 					{{ basic.switch(id~'day', gad_set, icon1~'scene_day.svg', icon0~'scene_day.svg', '21', '17') }}
 					{{ basic.switch(id~'winter', gad_set, icon1user~'snow_shield.svg', icon0user~'snow_shield.svg', 'on', '21') }}
 					{{ basic.switch(id~'summer', gad_set, icon1user~'heat_pause.svg', icon0user~'heat_pause.svg', 'off', '17') }}
-					{% if gad_state %}{{ basic.switch(id~'state', gad_state, icon1~'sani_heating.svg', icon0~'sani_heating.svg') }}{% endif %}
+					{% if gad_state %}
+						{{ basic.switch(id~'globallock', gad_globallock, icon1~'secur_locked.svg', icon0~'secur_open.svg') }}
+					{% endif %}
 		</div>
 	</div>
 {% endmacro %}
