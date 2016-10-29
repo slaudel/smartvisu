@@ -74,7 +74,7 @@
 	{% import "basic.html" as basic %}
 	{% import "homematic/widget_homematic.html" as homematic %}
 	<div class="dimmer">
-		{{ basic.switch(id~'switch', gad_switch, icon1~'light_light.png', icon0~'light_light.png') }}
+		{{ basic.switch(id~'switch', gad_switch, icon1~'light_light.svg', icon0~'light_light.svg') }}
 		<p>{{ txt|e }}</p>
 		{{ homematic.slider(id~'slider', gad_value, min, max, step) }}
 	</div>
@@ -108,8 +108,8 @@
 		class="rtr_homematic" min_temp="{{ min_temp | default(5.0) }}" max_temp="{{ max_temp | default(30.0) }}">
 		<div class="actual">
 			<div class="temp">
-			{{ basic.symbol(id~'windowopen', gad_window, '', icon1~'fts_window_2w_open.png', 'open') }}
-			{{ basic.symbol(id~'windowclose', gad_window, '', icon0~'fts_window_2w.png', 'closed') }}
+			{{ basic.symbol(id~'windowopen', gad_window, '', icon1~'fts_window_2w_open.svg', 'open') }}
+			{{ basic.symbol(id~'windowclose', gad_window, '', icon0~'fts_window_2w.svg', 'closed') }}
 			&nbsp;{{ basic.float(id~'actual', gad_actual, '°' ) }}
 			{{ icon.battery(id~'battery', '', gad_battery, '2.2', '3') }}
 			</div>
@@ -132,14 +132,14 @@
 
 		<div class="control">
 					{% if show_auto_man|default(true) %}
-						{{ basic.switch(id~'manauto', gad_controlmode, icon1~'sani_heating_automatic.png', icon0~'sani_heating_manual.png', 'auto', 'manual') }}
+						{{ basic.switch(id~'manauto', gad_controlmode, icon1~'sani_heating_automatic.svg', icon0~'sani_heating_manual.svg', 'auto', 'manual') }}
 					{% endif %}
-					{{ basic.switch(id~'boost', gad_controlmode, icon1user~'sani_heating_boost.png', icon0user~'sani_heating_boost.png', 'boost', 'auto') }}
-					{{ basic.switch(id~'night', gad_set, icon1~'scene_night.png', icon0~'scene_night.png', '17', '21') }}
-					{{ basic.switch(id~'day', gad_set, icon1~'scene_day.png', icon0~'scene_day.png', '21', '17') }}
-					{{ basic.switch(id~'winter', gad_set, icon1user~'snow_shield.png', icon0user~'snow_shield.png', 'on', '21') }}
-					{{ basic.switch(id~'summer', gad_set, icon1user~'heat_pause.png', icon0user~'heat_pause.png', 'off', '17') }}
-					{% if gad_state %}{{ basic.switch(id~'state', gad_state, icon1~'sani_heating.png', icon0~'sani_heating.png') }}{% endif %}
+					{{ basic.switch(id~'boost', gad_controlmode, icon1user~'sani_heating_boost.svg', icon0user~'sani_heating_boost.svg', 'boost', 'auto') }}
+					{{ basic.switch(id~'night', gad_set, icon1~'scene_night.svg', icon0~'scene_night.svg', '17', '21') }}
+					{{ basic.switch(id~'day', gad_set, icon1~'scene_day.svg', icon0~'scene_day.svg', '21', '17') }}
+					{{ basic.switch(id~'winter', gad_set, icon1user~'snow_shield.svg', icon0user~'snow_shield.svg', 'on', '21') }}
+					{{ basic.switch(id~'summer', gad_set, icon1user~'heat_pause.svg', icon0user~'heat_pause.svg', 'off', '17') }}
+					{% if gad_state %}{{ basic.switch(id~'state', gad_state, icon1~'sani_heating.svg', icon0~'sani_heating.svg') }}{% endif %}
 		</div>
 	</div>
 {% endmacro %}
