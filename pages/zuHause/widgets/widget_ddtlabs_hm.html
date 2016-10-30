@@ -7,7 +7,7 @@
 * @param step for plus/minus buttons (optional, default 0.5)
 * @author dev0 / ddtlabs
 */
-{% macro rtr(id, gad, gad_humidity, step) %}
+{% macro rtr(id, gad, gad_humidity, step, day, night) %}
 	{% import "basic.html" as basic %}
 	{% import "widgets/widget_ddtlabs_icon.html" as ddtlabs_icon %}
 
@@ -34,7 +34,7 @@
 			<span data-role="controlgroup" data-type="horizontal">
 				{{ basic.dual(id~'.bd.controlMode.manauto', gad~'_Clima.controlMode', 'sani_heating_automatic.svg', 'sani_heating_manual.svg', 'auto', 'manual', 'mini') }}
 				{{ basic.dual(id~'.bd.controlMode.boost', gad~'_Clima.controlMode', 'sani_heating_boost.svg', 'sani_heating_boost.svg', 'boost', 'auto', 'mini', '#f00', '#fff') }}
-				{{ basic.dual(id~'.bd.night_day', gad~'_Clima.desired-temp', 'scene_day.svg', 'scene_night.svg', '19.5', '16', 'mini') }}
+				{{ basic.dual(id~'.bd.night_day', gad~'_Clima.desired-temp', 'scene_day.svg', 'scene_night.svg', '{{ day|default(21) }}', '{{ night|default(17) }}', 'mini') }}
 			</span>
 
 			<span data-role="controlgroup" data-type="horizontal">

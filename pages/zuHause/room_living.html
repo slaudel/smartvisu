@@ -43,7 +43,7 @@
 		<!-- /*hmtc(id, txt, gad_actual, gad_set, gad_controlmode, gad_daytemp, gad_nighttemp, gad_window, gad_battery, gad_globallock, gad_txt, step, gad_valve, gad_humidity, show_auto_man, min_temp, max_temp)
 		{{ homematic.hmtc('WZ.Klima', 'Wohnzimmer', 'WZ.Klima.Ist', 'WZ.Klima.Soll', 'WZ.Klima.Modus', 'WZ.Klima.Tag', 'WZ.Klima.Nacht', '', 'WZ.Klima.Batterie', 'WZ.Klima.Sperre', '', '1', 'WZ.Klima.Ventil','WZ.Klima.Feuchte') }}*/ -->
 
-		{{ ddtlabs_hm.rtr('WZ_RTR', 'WZ_RTR', 'WZ_RTR.humidity', 0.5) }}
+		{{ ddtlabs_hm.rtr('WZ_RTR', 'WZ_RTR', 'WZ_RTR.humidity', 0.5, 22, 16) }}
 	</div>
 </div>
 
