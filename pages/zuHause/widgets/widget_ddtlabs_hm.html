@@ -9,7 +9,7 @@
 */
 {% macro rtr(id, gad, gad_humidity, step) %}
 	{% import "basic.html" as basic %}
-	{% import "widget_ddtlabs_icon.html" as ddtlabs_icon %}
+	{% import "widgets/widget_ddtlabs_icon.html" as ddtlabs_icon %}
 
 	<span class="ddtlabs">
 	<div id="{{ uid(page, id) }}" data-widget="device.rtr" data-step="{{ step|default(0.5) }}" class="rtr">
@@ -133,7 +133,3 @@
 	</span>
 </span>
 {% endmacro %}
-
-
-
-
