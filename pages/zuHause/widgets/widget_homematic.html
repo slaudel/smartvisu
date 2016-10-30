@@ -125,7 +125,7 @@
 		{% if gad_set %}
 			<div class="set">
 				<a data-role="button" data-icon="minus" data-inline="true" data-iconpos="notext" class="ui-mini"></a>
-				<div class="temp">{{ basic_extra.float(id~'set', gad_set, '°', '', {"on": "Winter", "off" : "Sommer"} ) }}</div>
+				<div class="temp">{{ basic.float(id~'set', gad_set, '°' ) }}</div>
 				<a data-role="button" data-icon="plus" data-inline="true" data-iconpos="notext" class="ui-mini"></a>
 			</div>
 		{% endif %}
