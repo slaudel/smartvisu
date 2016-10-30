@@ -46,8 +46,9 @@
 
 				<div class="ui-mini ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-center ui-last-child ui-btn-up-a status">
 					<div style="margin: 3px 0 0 0 ;">
-					/*{{ ddtlabs_icon.battery(id~'.battery', '', gad~'.batteryx10', 21, 32) }}*/
-					{{ icon.battery(id~'.battery', '', gad~'.battery', '2.2', '3') }}
+					<!-- /*{{ ddtlabs_icon.battery(id~'.battery', '', gad~'.batteryx10', 21, 32) }}*/ -->
+					{{ icon.battery(id~'.battery', '', gad~'.batteryx10', '2.2', '3') }}
+					{{ basic.float(id~'.batteryNum', gad~'.batteryLevelPercent', ' %') }}
 					</div>
 				</div>
 
