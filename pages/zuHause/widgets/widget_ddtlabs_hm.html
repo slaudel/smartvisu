@@ -46,14 +46,14 @@
 
 				<div class="ui-mini ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-center ui-last-child ui-btn-up-a status">
 					<div style="margin: 3px 0 0 0 ;">
-					{{ basic.float(id~'.batteryNum', gad~'.batteryLevelPercent', '%') }}
+					<!-- /*{{ basic.float(id~'.batteryNum', gad~'.batteryLevelPercent', '%') }}*/ -->
 					{{ icon.battery(id~'.battery', '', gad~'.batteryx10', '2.2', '3') }}
 					</div>
 				</div>
 
 				<div class="ui-mini ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-center ui-last-child ui-btn-up-a status">
 					<div style="margin: 3px 0 0 0 ;  font-size: 10pt; font-weight: normal;">
-					{{ basic.value(id~'.valve', gad~'_Clima.valve') }}<br>%
+					{{ basic.value(id~'.valve', gad~'_Clima.valve', '%') }}
 					</div>
 				</div>
 
