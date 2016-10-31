@@ -50,7 +50,7 @@
 
 .ddtlabs .rtr .control .status {
 	height: 42px;
-	width: 42px;
+	width: 58px;
 /**	width: 22px;
 	vertical-align: middle;
 */
@@ -73,7 +73,14 @@
 
 }
 
+a.ui-btn-inline.ui-mini .icon, a.ui-btn-inline.ui-mini .fx-icon {
+	width: 52px;
+	height: 32px;
+}
 
+.ddtlabs .rtr .control .status .value {
+	margin: 11px 0 0 0;
+}
 
 
 /**
