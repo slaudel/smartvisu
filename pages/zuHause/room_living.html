@@ -13,15 +13,15 @@
 	<div class="ui­fixed ui­body­a ui­corner­bottom ">
 		<div class="actual" data-widget="device.rtr">
 			<div class="temp">
-			Aktuell:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.measured-temp', Outside.Temperature, '°' ) }}
+			Aktuell:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.measured-tempOut', Outside.Temperature, '°' ) }}
 			<!-- /*{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.humidity', gad_humidity) }}%   {% endif %} */-->
 			</div>
 			<div class="temp">
-			Min:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMin', Outside.statTemperatureDayMin, '°' ) }}
+			Min:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMinOut', Outside.statTemperatureDayMin, '°' ) }}
 			<!-- /*{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.statHumidityDayMin', gad_humidity~'minHum') }}%   {% endif %}*/ -->
 			</div>
 			<div class="temp">
-			Max:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMax', Outside.statTemperatureDayMax, '°' ) }}
+			Max:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMaxOut', Outside.statTemperatureDayMax, '°' ) }}
 			<!-- /*{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.statHumidityDayMax', gad_humidity~'maxHum') }}%   {% endif %} */-->
 			<hr width="60%">
 			</div>
