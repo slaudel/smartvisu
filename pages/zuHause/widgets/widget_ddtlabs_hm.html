@@ -21,11 +21,11 @@
 			{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.humidity', gad_humidity) }}%   {% endif %}
 			</div>
 			<div class="temp">
-			Min:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.measured-temp', gad~'_Weather.statTemperatureDayMin', '°' ) }}
+			Min:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMin', gad~'_Weather.statTemperatureDayMin', '°' ) }}
 			{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.humidity', gad_humidity) }}%   {% endif %}
 			</div>
 			<div class="temp">
-			Max:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.measured-temp', gad~'_Weather.statTemperatureDayMax', '°' ) }}
+			Max:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMax', gad~'_Weather.statTemperatureDayMax', '°' ) }}
 			{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.humidity', gad_humidity) }}%   {% endif %}
 			<hr width="60%">
 			</div>
