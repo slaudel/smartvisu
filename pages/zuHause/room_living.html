@@ -17,11 +17,11 @@
 			<!-- /*{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.humidity', gad_humidity) }}%   {% endif %} */-->
 			</div>
 			<div class="temp">
-			Min:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMinOut', 'Outside.statTemperatureDayMin', '°' ) }}
+			Min:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMinOut', 'Outside.statTemperatureDayMin', '°' ) }}&nbsp;&nbsp;&nbsp;({{ basic.float(id~'.statTemperatureDayMinOutYesterday', 'Outside.statTemperatureDayMinLast', '°' ) }})
 			<!-- /*{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.statHumidityDayMin', gad_humidity~'minHum') }}%   {% endif %}*/ -->
 			</div>
 			<div class="temp">
-			Max:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMaxOut', 'Outside.statTemperatureDayMax', '°' ) }}
+			Max:&nbsp;&nbsp;&nbsp;{{ basic.float(id~'.statTemperatureDayMaxOut', 'Outside.statTemperatureDayMax', '°' ) }}&nbsp;&nbsp;&nbsp;({{ basic.float(id~'.statTemperatureDayMaxOutYesterday', 'Outside.statTemperatureDayMaxLast', '°' ) }})
 			<!-- /*{% if gad_humidity %}  &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; {{ basic.value(id~'.statHumidityDayMax', gad_humidity~'maxHum') }}%   {% endif %} */-->
 			<hr width="60%">
 			</div>
