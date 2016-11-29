@@ -43,8 +43,9 @@
 <div class="block">
 	<div class="ui-bar-c ui-li-divider ui-corner-top">Küchenlicht</div>
 	<div class="ui-fixed ui-body-a ui-corner-bottom">
-		{{ basic.switch(id~'kitchen-light-switch', 'Kueche.Schrank.Downlight', 'light_light.svg', 'light_light.svg') }}
-		{{ basic.flip(id~'kitchen-light-flip', 'Kueche.Schrank.Downlight', 'An', 'Aus') }}
+		<!-- /*{{ basic.switch(id~'kitchen-light-switch', 'Kueche.Schrank.Downlight', 'light_light.svg', 'light_light.svg') }}
+		{{ basic.flip(id~'kitchen-light-flip', 'Kueche.Schrank.Downlight', 'An', 'Aus') }} */-->
+		{{ basic.shifter('shifter1', 'Kueche.Schrank.Downlight.Switch', 'Kueche.Schrank.Downlight.Value') }}
 
 
 	</div>
