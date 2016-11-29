@@ -45,7 +45,7 @@
 	<div class="ui-fixed ui-body-a ui-corner-bottom">
 		<!-- /*{{ basic.switch(id~'kitchen-light-switch', 'Kueche.Schrank.Downlight', 'light_light.svg', 'light_light.svg') }}
 		{{ basic.flip(id~'kitchen-light-flip', 'Kueche.Schrank.Downlight', 'An', 'Aus') }} */-->
-		{{ basic.shifter('shifter1', 'Kueche.Schrank.Downlight.Switch', 'Kueche.Schrank.Downlight.Value') }}
+		{{ device.dimmer(id~'kitchen-light-dimmer', 'Küchenschrank', 'Kueche.Schrank.Downlight.Switch', 'Kueche.Schrank.Downlight.Value', 0, 99, 10) }}
 
 
 	</div>
