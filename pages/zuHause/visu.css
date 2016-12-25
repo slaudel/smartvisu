@@ -19,7 +19,10 @@
 		background-image: url('../../pics/bg/luminous_lines.png');
 	}
 }
-
+.block .ui-float {
+	margin: 0 5px 10px 5px;
+	padding: 10px 5px 10px 5px;
+}
 /**
  * --- W i d g e t s :   H M   R T R -----------------------------------------------------
  */
